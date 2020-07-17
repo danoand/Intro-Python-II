@@ -1,7 +1,12 @@
+import pprint
 from room import Room
+from player import Player
+
+# Helper objects
+pp = pprint.PrettyPrinter(indent=2)
 
 # Declare all the rooms
-
+print("STARTUP: Hey... setting up some cool rooms...")
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
@@ -23,7 +28,7 @@ earlier adventurers. The only exit is to the south."""),
 
 
 # Link rooms together
-
+print("STARTUP: Hey... linking rooms together...")
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
@@ -36,8 +41,11 @@ room['treasure'].s_to = room['narrow']
 #
 # Main
 #
+# print('DEBUG: rooms are:')
+# pp.pprint(room)
 
 # Make a new player object that is currently in the 'outside' room.
+playa = Player("John", "outside")
 
 # Write a loop that:
 #
