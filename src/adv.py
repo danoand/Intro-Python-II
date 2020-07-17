@@ -48,7 +48,9 @@ room['treasure'].s_to = room['narrow']
 playa = Player("Johnny", "outside")
 game_input = None
 # Write a loop that:
-#
+# * Prints the current room name
+# * Prints the current description (the textwrap module might be useful here).
+# * Waits for user input and decides what to do.
 while game_input != "q":
     print("Player: {name} is currently in room: {room_current}".format(
         name=playa.name,
@@ -58,9 +60,6 @@ while game_input != "q":
 
     game_input=input("What should {name} do now? ".format(name=playa.name))
 
-# * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Print an error message if the movement isn't allowed.
